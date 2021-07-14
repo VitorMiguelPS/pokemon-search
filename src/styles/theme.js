@@ -1,12 +1,14 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core";
 
-export const primaryColor = "#d53369";
+export const primaryColor = "#fff";
 export const secondaryColor = "#daae51";
-export const secondaryBlue = "#0053a1";
+export const tertiaryColor = "#ED5564";
+export const darkYellow = "#B8860B";
 export const darkBlue = "#005";
 export const whiteColor = "#fff";
+export const blackColor = "#000";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: primaryColor,
@@ -14,14 +16,21 @@ const theme = createMuiTheme({
     secondary: {
       main: secondaryColor,
     },
+    tertiary: {
+      main: tertiaryColor,
+    },
   },
   appColors: {
-    secondaryBlue,
     darkBlue,
     whiteColor,
+    blackColor,
+    darkYellow,
   },
   typography: {
     fontFamily: ["Geomanist"].join(","),
+  },
+  pokemonText: {
+    fontFamily: "FreePixel",
   },
 });
 

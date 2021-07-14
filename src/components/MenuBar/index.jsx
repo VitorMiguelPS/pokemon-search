@@ -1,10 +1,10 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Grid } from "@material-ui/core";
-import { SportsBaseball } from "@material-ui/icons";
+import pokeball from "../../assets/images/pokeball.png";
 
 import { useStyles } from "./styles";
 
-function SideBar() {
+function MenuBar() {
   const classes = useStyles();
 
   return (
@@ -15,7 +15,7 @@ function SideBar() {
     >
       <Toolbar className={classes.toolbar}>
         <Grid container alignItems="center">
-          <SportsBaseball />
+          <img src={pokeball} alt="Pokeball" className={classes.pokeballIcon} />
           <Typography variant="h6" className={classes.title}>
             Pokedex
           </Typography>
@@ -43,4 +43,4 @@ function SideBar() {
   );
 }
 
-export default SideBar;
+export default MenuBar;

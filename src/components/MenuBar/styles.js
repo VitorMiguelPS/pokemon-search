@@ -1,38 +1,31 @@
 import { makeStyles } from "@material-ui/core";
 
-const whiteColor = "#fff";
+const blackColor = "#000";
 
 export const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   HeaderMenu: {
-    borderBottom: `1px solid rgba(255, 255, 255, 0.5)`,
     boxShadow: "none",
-    position: "absolute",
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
+    background: "linear-gradient(to top, #79c9fa, #abd4fe, #d0e0ff, #eceeff)",
   },
   toolbar: {
     justifyContent: "space-between",
-    color: whiteColor,
+    color: blackColor,
 
-    "& svg": {
-      color: whiteColor,
-    },
     "& a": {
       textDecoration: "none",
       width: "auto",
+      fontWeight: 700,
     },
   },
   title: {
-    color: whiteColor,
+    color: blackColor,
     fontWeight: 700,
     marginLeft: 10,
   },
-  loginButton: {
-    borderRadius: 20,
-    color: "#000 !important",
+  pokeballIcon: {
+    width: 20,
   },
 }));
