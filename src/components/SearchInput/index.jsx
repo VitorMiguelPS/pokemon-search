@@ -12,6 +12,13 @@ function SearchInput() {
   const [pokemonValue, setPokemonValue] = useState("");
   const [searchedPokemon, setSearchedPokemon] = useState("");
 
+  const getPokemonWithEnter = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      getPokemonInformations();
+    }
+  };
+
   const getPokemonInformations = async () => {
     try {
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemonValue}`;
@@ -33,6 +40,7 @@ function SearchInput() {
           className={classes.searchBox}
           value={pokemonValue}
           onChange={(e) => setPokemonValue(e.target.value)}
+          onKeyPress={(e) => getPokemonWithEnter(e)}
         />
         <Button
           className={classes.searchButton}
