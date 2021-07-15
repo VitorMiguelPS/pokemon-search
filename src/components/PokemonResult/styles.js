@@ -57,7 +57,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   modalInformations: {
-    backgroundColor: theme.appColors.whiteColor,
+    backgroundColor: theme.appColors.pokedexColor,
     borderRadius: 20,
     padding: 25,
     width: "50%",
@@ -65,5 +65,53 @@ export const useStyles = makeStyles((theme) => ({
   },
   pokemonModalMainImg: {
     width: 200,
+    border: `25px solid ${theme.appColors.whiteColor}`,
+    backgroundColor: theme.appColors.pokedexBgColor,
+  },
+  pokemonModalOtherImg: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    border: `3px solid ${theme.appColors.whiteColor}`,
+    backgroundColor: theme.appColors.pokedexBgColor,
+  },
+  pokemonModalTinyImg: {
+    width: 70,
+    margin: "0 10px",
+    cursor: "pointer",
+  },
+  pokemonModalInformations: {
+    color: theme.appColors.whiteColor,
+    marginLeft: 50,
+    backgroundColor: "#313131",
+    width: 305,
+    padding: 11,
+
+    "& p": {
+      fontFamily: theme.pokemonText.fontFamily,
+
+      "& b": {
+        fontSize: 30,
+        textTransform: "capitalize",
+      },
+    },
+  },
+  pokemonStatsChards: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    marginTop: 10,
+  },
+  statsName: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+  statsNumber: {
+    fontSize: 20,
+  },
+  statsTitle: {
+    fontSize: 12,
   },
 }));
