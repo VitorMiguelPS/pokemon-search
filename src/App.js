@@ -4,21 +4,27 @@ import { ThemeProvider } from "@material-ui/core/styles";
 
 import "./App.css";
 import theme from "./styles/theme";
+import { ProviderCommon } from "./contexts/common";
 
 import HomeDisplay from "./components/HomeDisplay";
 import SearchInput from "./components/SearchInput";
 import MenuBar from "./components/MenuBar";
+import PokemonsList from "./components/PokemonsList";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <MenuBar />
+      <ProviderCommon>
+        <MenuBar />
 
-      <Grid container className="app">
-        <HomeDisplay />
+        <Grid container className="app">
+          <HomeDisplay />
 
-        <SearchInput />
-      </Grid>
+          <SearchInput />
+
+          <PokemonsList />
+        </Grid>
+      </ProviderCommon>
     </ThemeProvider>
   );
 }

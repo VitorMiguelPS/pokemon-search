@@ -41,11 +41,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 0 100px;
   background-image: url("./assets/images/pokemon-background.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 0 100px;
+  background-position: top;
+  background-size: contain;
+}
+
+body {
+  background: #7fad71;
 }
 
 body::-webkit-scrollbar {
@@ -71,10 +75,6 @@ body::-webkit-scrollbar-thumb {
   .app-logo {
     animation: App-logo-spin infinite 1s alternate;
   }
-}
-
-.app-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {

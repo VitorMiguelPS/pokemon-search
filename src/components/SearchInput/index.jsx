@@ -1,33 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { TextField, Button } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
-import axios from "axios";
 
+import useRequest from "../../hooks/useRequest";
+import { ContextCommon } from "../../contexts/common";
 import { useStyles } from "./styles";
 import PokemonResult from "../PokemonResult";
 
 function SearchInput() {
   const classes = useStyles();
+  const { getPokemonInformations } = useRequest();
+
+  const { pokemonResult } = useContext(ContextCommon);
 
   const [pokemonValue, setPokemonValue] = useState("");
-  const [searchedPokemon, setSearchedPokemon] = useState("");
 
   const getPokemonWithEnter = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      getPokemonInformations();
+      getPokemonInformations(pokemonValue, "uniqueResult");
     }
   };
 
-  const getPokemonInformations = async () => {
-    try {
-      const url = `https://pokeapi.co/api/v2/pokemon/${pokemonValue}`;
-      const res = await axios.get(url);
-
-      setSearchedPokemon(res.data);
-    } catch (e) {
-      console.log(e);
-    }
+  const getPokemonRequest = async () => {
+    getPokemonInformations(pokemonValue, "uniqueResult");
   };
 
   return (
@@ -45,13 +41,13 @@ function SearchInput() {
         <Button
           className={classes.searchButton}
           color="primary"
-          onClick={getPokemonInformations}
+          onClick={getPokemonRequest}
         >
           <Search />
         </Button>
       </form>
 
-      {searchedPokemon && <PokemonResult pokemonResult={searchedPokemon} />}
+      {pokemonResult && <PokemonResult />}
     </>
   );
 }

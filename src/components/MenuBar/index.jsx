@@ -23,7 +23,7 @@ function MenuBar() {
 
         <Grid container justifyContent="flex-end">
           <Button
-            href="https://github.com/VitorMiguelPS"
+            href="https://github.com/VitorMiguelPS/pokemon-search"
             target="_blank"
             color="inherit"
           >
