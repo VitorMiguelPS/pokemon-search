@@ -11,7 +11,7 @@ These are the dependencies used in this project:
 1. **Material-UI:** To create and manage style of application
 2. **axios:** To abstract the HTTP requests in API
 
-Environment variables
+### Environment variables
 
 This project don't use any environment variable.
 
