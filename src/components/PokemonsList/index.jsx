@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext, memo } from "react";
 import { Button, Grid, Typography, Paper } from "@material-ui/core";
 import axios from "axios";
 
+import PikachuGif from "../../assets/images/pikachu-running.gif";
 import { ContextCommon } from "../../contexts/common";
 import useRequest from "../../hooks/useRequest";
 import { useStyles } from "./styles";
@@ -10,10 +11,14 @@ function PokemonsList() {
   const classes = useStyles();
   const { getPokemonInformations } = useRequest();
 
-  const { setOpenModal, setCurrentImg, setPokemonResult } =
-    useContext(ContextCommon);
+  const {
+    setOpenModal,
+    setCurrentImg,
+    setPokemonResult,
+    pokemonsList,
+    setPokemonsList,
+  } = useContext(ContextCommon);
 
-  const [pokemonsList, setPokemonsList] = useState([]);
   const [pokemonsPagination, setPokemonsPaginations] = useState(15);
 
   const sliceList = pokemonsList?.slice(0, pokemonsPagination);
@@ -52,7 +57,7 @@ function PokemonsList() {
 
   return (
     <>
-      {pokemonsList && (
+      {pokemonsList.length ? (
         <Grid className={classes.pokemonList}>
           <Typography variant="h4">List of all Pokemons</Typography>
 
@@ -99,6 +104,20 @@ function PokemonsList() {
             >
               Load more
             </Button>
+          </Grid>
+        </Grid>
+      ) : (
+        <Grid className={classes.loadingClass}>
+          <span className={classes.loadingBackground} />
+
+          <Grid className={classes.loadingItems}>
+            <img
+              src={PikachuGif}
+              alt="Pikachu Running"
+              className={classes.loadingImg}
+            />
+
+            <Typography elevation={0}>Receiving data</Typography>
           </Grid>
         </Grid>
       )}

@@ -44,4 +44,10 @@ export const useStyles = makeStyles((theme) => ({
   pokemonMoreBtn: {
     background: theme.palette.secondary.main,
   },
+  loadingClass: {
+    marginTop: 100,
+  },
+  loadingImg: {
+    width: 100,
+  },
 }));

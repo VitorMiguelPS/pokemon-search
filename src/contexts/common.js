@@ -4,6 +4,7 @@ const ContextCommon = createContext({});
 
 const ProviderCommon = ({ children }) => {
   const [pokemonResult, setPokemonResult] = useState("");
+  const [pokemonsList, setPokemonsList] = useState([]);
   const [currentImg, setCurrentImg] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
@@ -13,6 +14,8 @@ const ProviderCommon = ({ children }) => {
         pokemonResult,
         setPokemonResult,
         currentImg,
+        pokemonsList,
+        setPokemonsList,
         setCurrentImg,
         openModal,
         setOpenModal,
